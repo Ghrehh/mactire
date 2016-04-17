@@ -1,4 +1,6 @@
 $link-grey: #BBB9B9;
+$charcoal: #444444;
+
 
 body {
   background-image: url(../assets/background.png); 
@@ -7,16 +9,15 @@ body {
   -o-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-.hamburger-container {
-  display:none;
+  margin: 0px;
+  background-attachment: fixed;
 }
 
 
 //// SITE HEADER ////
 
 .site-header-container {
+  //margin-top: 10px;
   height: 0px;
   text-align:center;
   letter-spacing: 8px;
@@ -25,7 +26,7 @@ body {
     color: white;
     font-size: 50px;
     text-decoration: none;
-    position: relative;
+    //position: relative;
     bottom: 50px;
   }
   
@@ -36,6 +37,9 @@ body {
   }
 }
 
+.hamburger-container {
+  display:none;
+}
 
 
 ////////navigation/////////
@@ -47,6 +51,9 @@ body {
   padding-left: 0px;
   padding-top: 10px;
   letter-spacing: 3px;
+  position: relative;
+  bottom: 20px;
+  margin-bottom: 0px;
   
   .spacer {
     width: 300px;
@@ -76,7 +83,6 @@ body {
 }
 
 
-
 //////////////album ad//////////
 
 .album-container {
@@ -85,7 +91,7 @@ body {
   //background-color: white;
   //border: 1px solid white;
   position: relative;
-  top: 50%;
+  top: 45%;
   -ms-transform: translateY(-50%); /* IE 9 */
   -moz-transform: translateY(-50%); /* IE 9 */
   -webkit-transform: translateY(-50%); /* Chrome, Safari, Opera */
@@ -101,6 +107,9 @@ body {
     font-weight: 600;
     word-spacing: 5px;
     margin: 15px;
+    line-height: 100px;
+    margin-bottom: 30px;
+    font-size: 120px;
   }
   
   .album-link {
@@ -115,23 +124,15 @@ body {
   }
 }
 
-@-moz-document url-prefix() { 
-  .body {
-    background: url(../assets/background.png)no-repeat center center fixed; 
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-      background-repeat: no-repeat;
-  }
+/*@-moz-document url-prefix() { 
+
   .album-container {
     transform: translateY(70%);
   }
-}
+}*/
 
 
 /////////social media///////////////
-
 
 .social-media {
   position:absolute;
@@ -143,19 +144,319 @@ body {
     i {
       color: white;
       font-size: 50px;
-      margin-right: 10px;
-  
+      margin-right: 5px;
+      margin-left: 5px;
     }
   }
 }
 
-@media (max-width: 800px) { //ipad
+//////////Screens///////////////
+
+.home-screen {
+  min-height: 100%;
+  height: 100%;
+  padding-top: 10px;
+  box-sizing: border-box;
+}
+
+.screen {
+  width: 100%;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 0;
+  text-align:center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  
+  
+
+                            
+  background-image: url(../assets/background4.jpg); 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+  .color {
+    padding: 20% 25%;
+    background-color:rgba(255, 255, 255, 0.39);
+    border: 1px solid rgba(0, 0, 0, 0.68);
+    border-width: 1px 0px;
+    
+        -moz-box-shadow:    inset 0 12px 8px -6px rgba(0, 0, 0, 0.58), 
+                            inset 0 -12px 8px -6px rgba(0, 0, 0, 0.58);
+        -webkit-box-shadow: inset 0 12px 8px -6px rgba(0, 0, 0, 0.58), 
+                            inset 0 -12px 8px -6px rgba(0, 0, 0, 0.58);
+         box-shadow:        inset 0 12px 8px -6px rgba(0, 0, 0, 0.58), 
+                            inset 0 -12px 8px -6px rgba(0, 0, 0, 0.58);
+                            
+                            
+                            
+
+  
+    h1 {
+      font-size: 90px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      color: #444444;
+      display: inline-block;
+      padding-bottom: 0px;
+      line-height: 75px;
+      padding: 0px 10px 0px 0px;
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      
+  
+    }
+    
+    p {
+      font-size: 20px;
+      padding: 0px 0px;
+      text-align: left;
+      padding-bottom: 30px;
+      
+    }
+  }
+}
+
+.about-screen {
+  @extend .screen;
+  
+}
+
+.music-screen {
+  @extend .screen;
+  background-image: none; 
+  
+  background-color: transparent;
+  border: none;
+  
+  .color {
+    padding: 8% 20% 11%;
+    background-color:rgba(0, 0, 0, 0.32);
+    box-shadow: none;
+    border:none;
+  
+    h1 {
+      color: white;
+      margin-bottom: 150px;
+      display: block;
+      padding: 0px;
+      margin-top: 0px;
+    }
+    
+    p {
+      color: white;
+    }
+    
+    .music-container {
+      //width: 800px;
+      margin: auto;
+      //height: 200px;
+      display: inline-block;
+      
+      .album-art-container {
+        //text-align:left;
+        //width: 180px;
+        display: inline-block;
+        
+        .cover {
+          width: 180px;
+          height: 180px;
+          background-color: white;
+          margin: 0px 10px;
+        }
+        
+        h1 {
+          font-size: 25px;
+          color: white;
+          margin: 0px;
+          line-height: 50px;
+          //display:inline-block;
+        }
+        
+      }
+      
+    
+    }
+    
+  }
+  
+}
+
+.news-screen {
+  @extend .screen;
+  background-image: url(../assets/background2.jpg); 
+  text-align:center;
+  //height: 700px;
+  
+  
+  .color {
+    padding: 2% 10% 2%;
+    background-color: rgba(255, 255, 255, 0.62);
+    height: 100%;
+    box-sizing:border-box;
+    
+    h1 {
+      display:block;
+      margin-bottom: 100px;
+    }
+    
+    .news-post {
+      text-align:left;
+      display: inline-block;
+      //background-color: blue;
+      width: 300px;
+      box-sizing:border-box;
+      padding: 20px 25px;
+      margin: 0px 20px;
+      
+      h1 {
+        font-size: 40px;
+        color: $charcoal;
+        margin: 0px;
+        line-height: 40px;
+        text-align:left;
+      }
+      
+      .date {
+        color: grey;
+        font-size: 20px;
+        display:inline-block;
+        padding: 0px;
+        margin: 0px;
+      }
+      
+      .body {
+        color: $charcoal;
+        font-size: 20px;
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+      }
+      
+      a {
+        font-size: 20px;
+        color: #868686;
+      }
+      
+      a:hover {
+        color: $charcoal;
+      }
+    }
+  }
+}
+
+.shows-screen {
+  @extend .screen;
+  background-image: none; 
+  background-color: transparent;
+  
+  
+  .color {
+    padding: 8% 20% 11%;
+    background-color:rgba(0, 0, 0, 0.32);
+    box-shadow: none;
+    border: none;
+    
+    h1 {
+      color: white;
+      margin-bottom: 120px;
+      display: block;
+      padding: 0px;
+      margin-top: 0px;
+    }
+    
+    p {
+      color: white;
+      margin: 0px;
+      padding: 0px;
+    }
+    
+    
+    .event-container {
+      border-bottom:1px solid rgba(162, 162, 162, 0.61);
+      text-align:left;
+      width: 700px;
+      margin: auto;
+      padding: 10px 0;
+      box-sizing:border-box;
+      
+      .date {
+        display:inline-block;
+        color: white;
+        vertical-align:top;
+        //margin-right: 15px;
+        box-sizing:border-box;
+        width: 100px;
+      }
+      
+      .venue-container {
+        display:inline-block;
+        vertical-align:top;
+        //margin-right: 15px;
+        box-sizing:border-box;
+        width: 250px;
+        
+        .venue {
+        }
+        .acts {
+          font-size: 15px;
+          color: #B9B9B9;
+        }
+        
+      }
+      
+      .country {
+        display: inline-block;
+        vertical-align:top;
+        //margin-right: 15px;
+        box-sizing:border-box;
+        width: 250px;
+      }
+      
+      .event-button-container {
+        box-sizing:border-box;
+        width: 90px;
+        display: inline-block;
+        vertical-align:top;
+        .event-button {
+          color: #C4D8EC;
+      
+        }
+        
+        .event-button:hover {
+          color: #2A75C1;
+        }
+      }
+    }
+    
+    .event-container:last-child {
+      border:none;
+    }
+    
+  }
+  
+  
+}
+
+@media (max-width: 1400px) {
+  body { 
+    background-position: 63% 0px;
+  }
+} //readjusts background position
+
+@media (max-width: 900px) { //ipad
 
   body { //moves background image
     background-position: 63% 0px;
+    
   }
   
   .navbar-container {
+    
     margin-top: 10px;
     .navbar {
       li {
@@ -167,11 +468,13 @@ body {
   .album-container {
     margin: auto 94% auto 6%;
   }
-}
+  
+  .site-header-container {
+    margin-top: 0px;
+  }
+} //readjusts size of nav for smaller displays
 
-
-
-@media (max-width: 600px) { //phones
+@media (max-width: 800px) { 
   
   body { //moves background image
     background-position: 63% 0px;
@@ -179,17 +482,16 @@ body {
   }
   
   .hamburger-container { //shows hamburger
-    border: 2px solid white;
-    border-radius: 5px;
-    padding: 4px 6px 6px;
+    border: 1px solid white;
+    border-radius: 2px;
+    padding: 3px 6px 3px ;
     width: 20px;
-    height: 20px;
     display: inline-block;
     margin-right: 5px;
     
     .line {
       border: 1px solid white;
-      margin: 4px 0px;
+      margin: 5px 0px;
     }
     
   }
@@ -197,10 +499,16 @@ body {
   
   // SITE HEADER //
   .site-header-container {
+    padding-top: 12px;
     text-align: center;
-    padding-top: 20px;
     height: initial;
     width: initial;
+    background-color: #232323;
+        
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.45);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.45);
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.45);
+    
     .site-header {
       position: static;
     }
@@ -208,20 +516,26 @@ body {
   
   .navbar-container {
     margin-top: 0px; // removes padding from ipad querry
-    width: 0px;
-    height: 0px;
+    width: 100%;
+    height: initial;
+    overflow-x: hidden;
+    
     .navbar {
+      padding: 12px 15px 20px;
       display: none;
-      position: absolute;
-      background-color: black;
+      position: static;
       width: 100%;
       text-align: left;
-      z-index: -2;
       margin-top: 0px;
-      padding-top: 60px;
-      padding-left: 15px;
-      padding-bottom: 8px;
+      background-color: #131313;
       font-size: 22px;
+
+        -moz-box-shadow:    inset  0  8px 8px -8px black, 
+                            inset  0 -8px 8px -8px black;
+        -webkit-box-shadow: inset  0  8px 8px -8px black, 
+                            inset  0 -8px 8px -8px black;
+         box-shadow:        inset  0  8px 8px -8px black, 
+                            inset  0 -8px 8px -8px black;
       
       .spacer {
         display: none;
@@ -240,32 +554,48 @@ body {
   .album-container {
     width: 100%;
     margin: auto;
-    padding-top: 50%;
+    padding-top: 35%;
     position:static;
     -ms-transform: none; /* IE 9 */
     -webkit-transform: none; /* Chrome, Safari, Opera */
     transform: none;
+    height: initial;
+    padding-bottom: 50px;
   }
   
   
   // SOCIAL MEDIA //
   
   .social-media {
-    right: 50%;
+    padding-top: 0%;
+    position:static;
+    text-align:center;
+    
     .social-media-inner {
-      width: 170px;
-      right: -64%;
-      position: relative;
+      position: static;
       padding-bottom: 10px;
+      text-align:center;
     }
   }
-}
+  
+  .home-screen {
+    height:initial;
+  }
+} //mobile
 
 @media (max-width: 320px) { //thinner phones
+
+  body { //moves background image
+    background-position: 73% 0px;
+    margin: 0px;
+  }
   
   .site-header-container {
+    
     .site-header {
       font-size: 47px;
+      position:relative;
+      bottom: 1px;
     }
     .hamburger-container {
       margin-right: 0px;
@@ -275,12 +605,13 @@ body {
   .navbar-container {
 
     .navbar {
-      font-size: 16px;
+      font-size: 20px;
+      padding: 15px;
 
       
       li {
         display: block;
-        margin: 7px 20px;
+        margin: 10px 10px;
         a {
           
         }
@@ -290,10 +621,12 @@ body {
   
   .album-container {
     .album-header {
-      font-size: 60px;
+      font-size: 90px;
+      line-height: 80px;
+
     }
     .album-link {
       font-size: 25px;
     }
   }
-}
+} //mobile
