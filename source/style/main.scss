@@ -558,9 +558,15 @@ body {
 
 @media (max-width: 800px) { 
   
+  
   body { //moves background image
+    background-image: none;
     background-position: 63% 0px;
     margin: 0px;
+    background-attachment: initial;
+    height: initial;
+    width: 100%;
+  
   }
   
   .hamburger-container { //shows hamburger
@@ -664,6 +670,19 @@ body {
   .home-screen {
     height:initial;
     padding-top: 0px;
+    background-position: 63% 0px;
+    margin: 0px;
+    background-attachment: initial;
+background-image: url(../assets/background-tall2.png); 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  }
+  
+  .black-screen {
+    display: none;
   }
   
   .about-screen {
