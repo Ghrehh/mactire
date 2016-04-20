@@ -2,14 +2,17 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     includes: {
-      files: {
-        src: ['source/pages/*.html'], // Source files
-        dest: 'build', // Destination directory
-        flatten: true,
-        cwd: '.',
-        options: {
-          silent: false,
-          
+      
+      dist1: {
+        files: {
+          src: ['source/pages/*.html'], // Source files
+          dest: 'build', // Destination directory
+          flatten: true,
+          cwd: '.',
+          options: {
+            silent: false,
+            
+          }
         }
       }
     },
@@ -43,7 +46,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-browserify');
 
-  grunt.registerTask('build', ['includes']);
+  grunt.registerTask('build', ['includes:dist1']);
   grunt.registerTask('style', ['sass']);
   grunt.registerTask('script', ['browserify']);
   grunt.registerTask('default', ['watch']);
