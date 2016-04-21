@@ -254,15 +254,14 @@ body {
 
 .music-screen {
   @extend .screen;
-  //background-image: url(../assets/rossstudio.png); 
-  //background-image: none; 
+  //background-image: url(../assets/black.png);  
   
   background-color: transparent;
   border: none;
   
   .color {
     padding: 8% 20% 15%;
-    background-color: rgba(0, 0, 0, 0.55);
+    //background-color: rgba(0, 0, 0, 0.55);
     background-color: #1B1B1B;
     box-shadow: none;
     border:none;

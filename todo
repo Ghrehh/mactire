@@ -1,1 +1,9 @@
-Make script to take json news posted and compile them to html pages, as well as a partial to be rendered on the main page
+implement posts script thingy
+
+create layout for index and post
+
+copy pth layout for music
+  put links for where to download the music etc
+  
+  maybe do it as a javascript click the album to reveal the info thingy
+  

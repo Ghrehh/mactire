@@ -4,15 +4,21 @@ module.exports = function(grunt) {
     includes: {
       
       dist1: {
-        files: {
-          src: ['source/pages/*.html'], // Source files
-          dest: 'build', // Destination directory
-          flatten: true,
-          cwd: '.',
-          options: {
-            silent: false,
-            
-          }
+        src: ['source/pages/*.html'], // Source files
+        dest: 'build', // Destination directory
+        flatten: true,
+        cwd: '.',
+        options: {
+          silent: false,
+        }
+      },
+      dist2: {
+        src: ['source/pages/news/*.html'], // Source files
+        dest: 'build/news/', // Destination directory
+        flatten: true,
+        cwd: '.',
+        options: {
+          silent: false,
         }
       }
     },
@@ -36,7 +42,7 @@ module.exports = function(grunt) {
     watch: {
         scripts: {
             files: ["./source/**/*"],
-            tasks: ["includes", "style", "script"]
+            tasks: ["includes:dist1", "style", "script"]
          }
     }
   });
@@ -46,7 +52,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-browserify');
 
-  grunt.registerTask('build', ['includes:dist1']);
+  grunt.registerTask('build', ['includes']);
   grunt.registerTask('style', ['sass']);
   grunt.registerTask('script', ['browserify']);
   grunt.registerTask('default', ['watch']);
