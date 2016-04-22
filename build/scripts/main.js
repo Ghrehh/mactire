@@ -1,21 +1,31 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 //parallax scroll for text, operates under the assumption the first element in the "color" container is a h1
-
 function parallaxText(name, offset = 8){
   if ( ($(window).scrollTop() + $(window).height()) > $(name +  " > .color > h1").offset().top && $(window).scrollTop() < ( $(name).offset().top + $(name).height() )   ){
-        console.log(name + " is parallaxing");
+        //console.log(name + " is parallaxing");
         $(name + " > .color").children().css({bottom: String(($(window).scrollTop() + $(window).height() - $(name + "> .color > h1").offset().top)  / offset ) + "px"});
         $(name + " > .color").children().css({position: "relative"});
         
   }
 }
 
+//nav links function
+function linkClick(link, anchor) {
+  $(link).click(function(){
+    $("body").animate({scrollTop: $(anchor).offset().top }, 500);
+  })
+}
+
 $(document).ready(function(){
   
-  $(".hamburger-container").click(function(){
-  $(".navbar").slideToggle();
-})
   
+  // HAMRBURGER MENU
+  $(".hamburger-container").click(function(){
+    $(".navbar").slideToggle();
+  })
+  
+  
+  //ALBUM TEXT JIGHLIGHT
   $(".album-link").mouseenter(function(){
     $(this).animate({ backgroundColor: 'white' }, { duration: 200, queue: false});
     $(this).animate({ color: 'black' }, { duration: 200, queue: false});
@@ -26,6 +36,7 @@ $(document).ready(function(){
   });
   
   
+  
   //SOCIAL MEDIA ICONS HIGHLIGHTING
   $("i").mouseenter(function(){
     $(this).animate({ color: '#444444' }, { duration: 200, queue: false});
@@ -34,8 +45,21 @@ $(document).ready(function(){
     $(this).animate({ color: 'white' }, { duration: 200, queue: false});
   });
   
-  if (/Android|BlackBerry|iPhone|iPad|iPod|webOS/i.test(navigator.userAgent) === false) {
   
+  //LINKS
+  linkClick(".home-link", ".home-screen");
+  linkClick(".about-link", ".about-screen");
+  linkClick(".music-link", ".music-screen");
+  linkClick(".news-link", ".news-screen");
+  linkClick(".shows-link", ".shows-screen");
+  linkClick(".contact-link", ".contact-screen");
+  
+  
+  //ONLY FOR DESKTOP over 800px
+  if (/Android|BlackBerry|iPhone|iPad|iPod|webOS/i.test(navigator.userAgent) === false && ($(window).width() > 800) ) {
+  
+  
+    //scroll stuff
     $(document).scroll(function(){
       //body parallax and fade out
       
@@ -58,16 +82,7 @@ $(document).ready(function(){
       $(".social-media-inner").css({opacity: String( 1 - $(document).scrollTop() / 300 )})
       
       
-      //parallax effect on about text
-      /*if ( ($(window).scrollTop() + $(window).height()) > $(".about-screen > .color > h1").offset().top ){
-        console.log("poop")
-        $(".about-screen > .color > h1").css({bottom: String(($(window).scrollTop() + $(window).height() - $(".about-screen > .color > h1").offset().top)  / 8 ) + "px"})
-        $(".about-screen > .color > p").css({bottom: String(($(window).scrollTop() + $(window).height() - $(".about-screen > .color > p").offset().top)  / 8 ) + "px"})
-        
-      }*/
-      
       parallaxText(".about-screen");
-      //parallaxText(".music-screen", 20);
   
   
   
