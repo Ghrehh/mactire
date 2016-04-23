@@ -869,7 +869,7 @@ body {
       .music-container {
         padding: 0% 2% 3%;
         box-shadow: none;
-        padding-bottom: 70px;
+        padding-bottom: 100px;
         
         .album-art-container {
           position: static;
@@ -895,7 +895,12 @@ body {
   }
   
   .shows-screen {
+    background-attachment: initial;
     .color {
+      
+      .h1 {
+        margin-bottom: 80px;
+      }
       
       .event-container {
         width: 85%;
@@ -905,7 +910,7 @@ body {
         .date {
         //100
           width: 14.2%;
-          font-size: 16px;
+          font-size: 15px;
           padding-top: 3px;
         }
         
@@ -913,9 +918,11 @@ body {
         //250
         width: 35.7%;
           .venue {
+            font-size: 15px;
           }
           
           .acts {
+            font-size: 15px;
 
           }
           
@@ -924,12 +931,14 @@ body {
         .country {
         //250
         width: 35.7%;
+        font-size: 15px;
         
         }
         
         .event-button-container {
         width: 11.5%;
           .event-button {
+            font-size: 15px;
           }
           
           .event-button:hover {
@@ -1041,6 +1050,7 @@ body {
   }
   
   .shows-screen {
+    
     .color {
       padding: 20% 0%;
     }

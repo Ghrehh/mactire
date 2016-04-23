@@ -1,5 +1,5 @@
 //parallax scroll for text, operates under the assumption the first element in the "color" container is a h1
-function parallaxText(name, offset = 8){
+function parallaxText(name, offset){
   if ( ($(window).scrollTop() + $(window).height()) > $(name +  " > .color > h1").offset().top && $(window).scrollTop() < ( $(name).offset().top + $(name).height() )   ){
         //console.log(name + " is parallaxing");
         $(name + " > .color").children().css({bottom: String(($(window).scrollTop() + $(window).height() - $(name + "> .color > h1").offset().top)  / offset ) + "px"});
@@ -11,7 +11,8 @@ function parallaxText(name, offset = 8){
 //nav links function
 function linkClick(link, anchor) {
   $(link).click(function(){
-    $("body").animate({scrollTop: $(anchor).offset().top }, 500);
+    $("body, html").animate({scrollTop: $(anchor).offset().top }, 500); //firefox needs html, chrome needs body fml
+    console.log($("body").scrollTop())
   })
 }
 
@@ -19,8 +20,21 @@ $(document).ready(function(){
   
   
   // HAMRBURGER MENU
+  var hamburger_pressed = false;
+  
   $(".hamburger-container").click(function(){
-    $(".navbar").slideToggle();
+    $(".top-navbar > .navbar").slideToggle();
+    
+    if (hamburger_pressed == false){
+      hamburger_pressed = true;
+      $(this).animate({backgroundColor: "white"});
+      $(".line").animate({"border-color": "#444444"});
+    }
+    else {
+      hamburger_pressed = false
+      $(this).animate({backgroundColor: "transparent"});
+      $(".line").animate({"border-color": "white"});
+    }
   })
   
   
@@ -81,7 +95,7 @@ $(document).ready(function(){
       $(".social-media-inner").css({opacity: String( 1 - $(document).scrollTop() / 300 )})
       
       
-      parallaxText(".about-screen");
+      parallaxText(".about-screen", 8);
   
   
   
