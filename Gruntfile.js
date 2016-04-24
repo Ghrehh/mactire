@@ -52,7 +52,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-browserify');
 
-  grunt.registerTask('build', ['includes']);
+  grunt.registerTask('build', ['includes:dist2']);
   grunt.registerTask('style', ['sass']);
   grunt.registerTask('script', ['browserify']);
   grunt.registerTask('default', ['watch']);
