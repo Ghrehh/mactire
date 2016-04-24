@@ -42,7 +42,7 @@ module.exports = function(grunt) {
     watch: {
         scripts: {
             files: ["./source/**/*"],
-            tasks: ["includes:dist1", "style", "script"]
+            tasks: ["includes", "style", "script"]
          }
     }
   });

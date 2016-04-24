@@ -443,7 +443,7 @@ body {
   @extend .screen;
   background-image: url(../assets/background2.jpg); 
   text-align:center;
-  //height: 700px;
+  background-position: 0 -70px;
   
   
   .color {
@@ -683,6 +683,10 @@ body {
   body { 
     background-position: 63% 0px;
   }
+  
+  .news-screen {
+    background-position: 0;
+  }
 } //readjusts background position
 
 @media (max-width: 900px) { //ipad
@@ -709,6 +713,8 @@ body {
   .site-header-container {
     margin-top: 0px;
   }
+  
+  
 } //readjusts size of nav for smaller displays
 
 @media (max-width: 800px) { 
