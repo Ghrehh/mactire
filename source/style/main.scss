@@ -147,15 +147,43 @@ body {
     
     position:relative;
     
-    i {
-      position:relative;
-      color: white;
-      font-size: 50px;
-      margin-right: 5px;
-      margin-left: 5px;
+    a {
+      text-decoration: none;
+      
+      i {
+        position:relative;
+        color: white;
+        font-size: 45px;
+        margin-right: 5px;
+        margin-left: 5px;
+        
+          -webkit-transition: color 100ms linear;
+          -moz-transition: color 100ms linear;
+          -o-transition: color 100ms linear;
+          transition: color 100ms linear;
+      }
+      
+      i:hover {
+        color: #444444;
+      }
+      
+      .facebook-i {
+        
+      }
+      
+      .youtube-i {
+        top: -3px;
+        font-size: 45px;
+      }
+      
+      .soundcloud-i {
+        font-size: 35px;
+        //top: 4px;
+      }
     }
   }
 }
+
 
 //////////Screens///////////////
 
@@ -209,7 +237,7 @@ body {
       display: inline-block;
       padding-bottom: 0px;
       line-height: 75px;
-      padding: 0px 10px 0px 0px;
+      //padding: 0px 10px 0px 0px;
       text-align: center;
       margin-top: 30px;
       margin-bottom: 30px;
@@ -239,6 +267,8 @@ body {
     
     p {
       position:relative;
+      padding-bottom: 0px;
+      margin-bottom: 0px;
     }
   }
     
@@ -449,7 +479,6 @@ body {
   .color {
     padding: 2% 10% 4%;
     background-color: rgba(255, 255, 255, 0.62);
-    //height: 100%;
     box-sizing:border-box;
     
     h1 {
@@ -460,11 +489,11 @@ body {
     .news-post {
       text-align:left;
       display: inline-block;
-      //background-color: blue;
       width: 300px;
       box-sizing:border-box;
       padding: 20px 25px;
       margin: 0px 20px;
+      vertical-align: top;
       
       h1 {
         font-size: 40px;
@@ -472,6 +501,7 @@ body {
         margin: 0px;
         line-height: 40px;
         text-align:left;
+        
       }
       
       .date {
@@ -655,7 +685,7 @@ body {
   //height: 500px;
   
   p {
-    color: white;
+    color: #C3C3C3;
     margin: 0;
     //position: absolute;
     //padding-left: 10px;
@@ -666,7 +696,47 @@ body {
     font-size: 16px;
   }
   
+  .social-media-footer {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 4px;
+    
+    a {
+      text-decoration: none;
+      
+      i {
+        color: rgb(181, 181, 181);
+        margin: 5px;
+        
+          -webkit-transition: color 100ms linear;
+          -moz-transition: color 100ms linear;
+          -o-transition: color 100ms linear;
+          transition: color 100ms linear;
+      }
+      
+      i:hover {
+        color: white;
+      }
+      
+      .youtube-i {
+        font-size: 34px;
+        top: -2.5px;
+        position: relative;
+      }
+      
+      .facebook-i {
+        
+      }
+      
+      .soundcloud-i {
+        font-size: 34px;
+      }
+    }
+    
+  }
+  
   .footer-nav {
+    text-align: center;
     .navbar {
       position:static;
       margin: 0px;
@@ -676,17 +746,154 @@ body {
         display: none;
       }
     }
+    
+    .archive-link {
+      @extend .archive-link;
+      color: white;
+      
+      font-size: 20px;
+      margin-bottom: 30px !important;
+      margin-top: 10px;
+    }
   }
 }
 
+//ARCHIVE STUFF
+
+.archive-body {
+  background-image: url(../assets/background4.jpg); 
+  
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+    background-repeat: no-repeat;
+}
+
+.archive-link {
+  margin-bottom: 70px;
+  display: inline-block;
+  padding: 0px 10px;
+  font-size: 20px;
+} //navigation links, out here so i can reference it to the footer and .news-screen-big
+
+.news-screen-big {
+  background-image: none; 
+  
+  background-color: rgba(253, 253, 253, 0.87);
+  padding: 0px;
+  margin: 0px;
+  min-height: 100%;
+  
+  
+  .color {
+    
+    padding: 20px 0px 80px;
+    //min-height: 100%;
+    margin: 0px;
+    box-sizing: border-box;
+    text-align: center;
+    
+    
+    h1 {
+      font-size: 90px;
+      color: #444444;
+      line-height: 75px;
+      padding: 0;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+    
+    p {
+      font-size: 20px;
+    }
+    
+    .archive-link {
+      @extend .archive-link;
+    } //navigation links
+    
+    ul {
+      margin: 0px;
+      padding: 0px;
+      width: 100%;
+      list-style: none;
+      padding: 0px 20%;
+      box-sizing: border-box;
+      
+      li {
+        text-align:left;
+        
+        
+        a {
+          text-align:left;
+          font-size: 60px;
+          color: grey;
+          display: inline-block;
+          line-height: 60px;
+          
+             -webkit-transition: color 100ms linear;
+              -moz-transition: color 100ms linear;
+              -o-transition: color 100ms linear;
+              transition: color 100ms linear;
+        } //link to post
+        
+        a:hover {
+          color: $charcoal;
+        }
+        
+        p {
+          font-size: 40px;
+          color: grey;
+          margin-top: 0px;
+        } //date
+      }
+    } //holds index links
+    
+    .news-post-body {
+      text-align: left;
+      font-size: 20px;
+      color: $charcoal;
+      padding: 0px 10%;
+    }
+    
+    .news-post-date {
+      text-align: center;
+      color: grey;
+    }
+  }
+} //for archived news posts
+
+
+
 @media (max-width: 1400px) {
+  
   body { 
     background-position: 63% 0px;
   }
   
   .news-screen {
     background-position: 0;
+    
+    .color {
+      
+    }
   }
+  
+  .about-screen {
+    
+    .color {
+      padding: 15% 15%;
+    }
+  }
+  
+  .contact-screen {
+    
+    .color {
+      padding: 5% 15%;
+    }
+  }
+  
 } //readjusts background position
 
 @media (max-width: 900px) { //ipad
@@ -851,6 +1058,14 @@ body {
   
   .about-screen {
     background-position: 50%;
+    
+    .color {
+      padding: 100px 10%;
+      
+      p {
+        font-size: 17px;
+      }
+    }
   }
   
   .music-screen {
@@ -907,7 +1122,6 @@ body {
         //100
           width: 14.2%;
           font-size: 15px;
-          padding-top: 3px;
         }
         
         .venue-container {
@@ -949,10 +1163,10 @@ body {
     background-position: 25%;
     
     .color {
-      padding: 15% 10%;
+      padding: 100px 10%;
       
       p {
-        font-size: 15px;
+        font-size: 17px;
       }
     }
   }
@@ -968,6 +1182,11 @@ body {
         }
       }
     }
+  }
+  
+  
+  .archive-link {
+    margin-bottom: 30px;
   }
   
 } //mobile
@@ -1015,7 +1234,7 @@ body {
 
     }
     .album-link {
-      font-size: 25px;
+      font-size: 20px;
     }
   }
   
@@ -1023,7 +1242,6 @@ body {
     background-position: 0%;
     
     .color {
-      padding: 15% 15%;
       
       h1 {
         padding: 0px;

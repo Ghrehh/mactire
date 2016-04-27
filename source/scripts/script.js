@@ -19,9 +19,8 @@ function linkClick(link, anchor) {
 $(document).ready(function(){
   
   
-  // HAMRBURGER MENU
+  //HAMBURGER MENU//
   var hamburger_pressed = false;
-  
   $(".hamburger-container").click(function(){
     $(".top-navbar > .navbar").slideToggle();
     
@@ -38,7 +37,7 @@ $(document).ready(function(){
   })
   
   
-  //ALBUM TEXT JIGHLIGHT
+  //LANDING SCREEN ALBUM TEXT HIGHLIGHTING//
   $(".album-link").mouseenter(function(){
     $(this).animate({ backgroundColor: 'white' }, { duration: 200, queue: false});
     $(this).animate({ color: 'black' }, { duration: 200, queue: false});
@@ -50,16 +49,7 @@ $(document).ready(function(){
   
   
   
-  //SOCIAL MEDIA ICONS HIGHLIGHTING
-  $("i").mouseenter(function(){
-    $(this).animate({ color: '#444444' }, { duration: 200, queue: false});
-  })
-  $("i").mouseleave(function(){
-    $(this).animate({ color: 'white' }, { duration: 200, queue: false});
-  });
-  
-  
-  //LINKS
+  //NAVIGATION LINKS
   linkClick(".home-link", ".home-screen");
   linkClick(".about-link", ".about-screen");
   linkClick(".music-link", ".music-screen");
@@ -68,37 +58,66 @@ $(document).ready(function(){
   linkClick(".contact-link", ".contact-screen");
   
   
+$(window).resize(function(){
+  //fixes the margin of the album display text on the front page if it's resized below 800px wide
+  if ($(window).width() < 801){
+    $(".white-screen").hide();
+    
+    $(".social-media-inner").css({"opacity": "1", "position" : "static"});
+    
+    $(".album-container").css({"opacity": "1", "margin-left" : "0px"});
+    $(".album-header").css({"position": "static"});
+    $(".album-link").css({"position": "static"});
+  }
+  else {
+    $(".navbar:first").show();
+    $(".social-media-inner").css({"position" : "relative"});
+    
+    $(".album-container").css("margin-left", "20%");
+    $(".album-header").css({"position": "relative"});
+    $(".album-link").css({"position": "relative"});
+    
+
+  }
+  
+  if ($(window).width() < 1401) {
+  
+  }
+});
+  
+  
   //ONLY FOR DESKTOP over 800px
   if (/Android|BlackBerry|iPhone|iPad|iPod|webOS/i.test(navigator.userAgent) === false && ($(window).width() > 800) ) {
   
   
     //scroll stuff
     $(document).scroll(function(){
-      //body parallax and fade out
-      
-      //background position y does not work on firefox, need to get the current x position then. I would need to find a way to manipulated the input as it could be
-      //0% or 63%, but i'm making the 0% 0px instead so they're both 3 characters long, shouldn't be problem with any luck.
-      
-      var current_body_x = $("body").css("background-position").substr(0,3); //gets current x position
-      
-      $("body").css({backgroundPosition: current_body_x +  " -" + String($(document).scrollTop() / 40) + "px"}) //combines x position and new y position for parallax effect
-      $(".white-screen").show();
-      $(".white-screen").css("opacity", 0 + $(window).scrollTop() / 550); //opacity for white screen effect
-      
-      //album slide up
-      $(".album-header").css({bottom: String($(document).scrollTop() / 1.2 ) + "px"})
-      $(".album-link").css({bottom: String($(document).scrollTop() / 2 ) + "px"})
-      $(".album-container").css({opacity: String( 1 - $(document).scrollTop() / 300 )})
-      
-      //social media slide up
-      $(".social-media-inner").css({bottom: String($(document).scrollTop() / 2 ) + "px"})
-      $(".social-media-inner").css({opacity: String( 1 - $(document).scrollTop() / 300 )})
-      
-      
-      parallaxText(".about-screen", 8);
+      if ($(window).width() > 801) {
+        //body parallax and fade out
+        
+        //background position y does not work on firefox, need to get the current x position then. I would need to find a way to manipulated the input as it could be
+        //0% or 63%, but i'm making the 0% 0px instead so they're both 3 characters long, shouldn't be problem with any luck.
+        
+        var current_body_x = $("body").css("background-position").substr(0,3); //gets current x position
+        
+        $("body").css({backgroundPosition: current_body_x +  " -" + String($(document).scrollTop() / 40) + "px"}) //combines x position and new y position for parallax effect
+        $(".white-screen").show();
+        $(".white-screen").css("opacity", 0 + $(window).scrollTop() / 550); //opacity for white screen effect
+        
+        //album slide up
+        $(".album-header").css({bottom: String($(document).scrollTop() / 1.2 ) + "px"})
+        $(".album-link").css({bottom: String($(document).scrollTop() / 2 ) + "px"})
+        $(".album-container").css({opacity: String( 1 - $(document).scrollTop() / 300 )})
+        
+        //social media slide up
+        $(".social-media-inner").css({bottom: String($(document).scrollTop() / 2 ) + "px"})
+        $(".social-media-inner").css({opacity: String( 1 - $(document).scrollTop() / 300 )})
+        
+        
+        parallaxText(".about-screen", 8);
+    
   
-  
-  
+      }
     });
     
     

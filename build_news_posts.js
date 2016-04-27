@@ -108,11 +108,15 @@ function makePages(){
       var links = "";
       
       for (i = 0; i < data.length; i++){
+        
           
-          var url = "./" + String(i + 1) + ".html";
-          var name = data[i].title;
+          var url = "./" + String((data.length) - i) + ".html";
+          var name = data[(data.length - 1) - i].title;
           
-          var link = '<li><a href="' + url + '">' + name + "</a></li>\n"
+          var link = '<li>\n\
+          <a href="' + url + '">' + name + "</a>\n\
+          <p>" + data[(data.length - 1) - i].date + "</p>\n\
+          </li>\n\n"
           links = links.concat(link)
       }
       
