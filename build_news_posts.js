@@ -10,7 +10,7 @@ var partial_template = template_dir + "/partial_template.html";
 
 var dir = "source/pages/news"; //directory name
 var preview_number = 3; //how man posts show up in the preview partial
-var preview_text_length = 200; //how long the preview text should be
+var preview_text_length = 300; //how long the preview text should be
 
 var partial_path = "source/pages/partials"; //where to place the partial
 
