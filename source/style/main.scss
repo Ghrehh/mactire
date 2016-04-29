@@ -21,6 +21,9 @@ body {
   background-position: 0px 0px;
 }
 
+p {
+  white-space:pre-line;
+}
 
 //// SITE HEADER ////
 
@@ -224,7 +227,7 @@ body {
   
   .color {
     padding: 5% 25%;
-    background-color:rgba(255, 255, 255, 0.39);
+    background-color: rgba(255,255,255,0.70);
     
 
                             
@@ -318,7 +321,7 @@ body {
     .music-container {
       margin: auto;
       width: 100%;
-      padding: 0% 12%;
+      padding: 0% 12% 5%;
       box-sizing: border-box;
       
         -moz-box-shadow:    inset 0 12px 8px -6px rgb(0, 0, 0),
@@ -403,7 +406,7 @@ body {
             list-style: none;
             margin: 0;
             padding: 0px 0px 20px;
-            font-size: 20px;
+            font-size: 23px;
             
             li {
               margin: 0;
@@ -484,7 +487,7 @@ body {
   
   .color {
     padding: 2% 0% 4%;
-    background-color: rgba(255, 255, 255, 0.62);
+    background-color: rgba(255, 255, 255, 0.75);
     box-sizing:border-box;
     
     h1 {
@@ -680,7 +683,8 @@ body {
   background-image: url(../assets/background7.jpg);
   //height: 700px;
   .color {
-    background-color: rgba(255, 255, 255, 0.52);
+    padding: 15%;
+    background-color: rgba(255, 255, 255, 0.76);
   }
 }
 
@@ -896,7 +900,7 @@ body {
   .contact-screen {
     
     .color {
-      padding: 5% 15%;
+      //padding: 5% 15%;
     }
   }
   

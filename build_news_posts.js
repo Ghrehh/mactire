@@ -140,6 +140,10 @@ function makePages(){
         var post = data[(data.length - 1) - i]; //only the most recent specified number
         var url = "news/" + String((data.length) - i) + ".html";
         
+        post.body = post.body.replace(/<a\b[^>]*>/i,"").replace(/<\/a>/i, "");
+        post.body = post.body.replace(/(?:\r\n|\r|\n)/g, ' '); //remove newlines
+        post.body = post.body.replace("<b>", '');
+        post.body = post.body.replace("</b>", '');
         html = html.replace("{{TITLE}}", post.title);
         html = html.replace("{{DATE}}", post.date);
         if (post.body.length > 150) {
